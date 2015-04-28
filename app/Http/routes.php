@@ -23,3 +23,18 @@ Route::controllers([
 Route::get('/wp/home', function() {
 	return view('wp.home');
 });
+
+Route::get('/wp/daftar', function() {
+	$view_variable = array(
+		'nama' =>'Ridwan Kamil',
+		'NIK' =>'3274050001110002223',
+		'TTL' => 'Bandung, 11 Januari 1980',
+		'alamat' => 'Jl. Merdeka No. 1'
+	);
+
+	return view('wp.daftar')->with($view_variable);
+});
+
+Route::post('/wp/daftar', function(){
+	return view('wp.daftar');
+});

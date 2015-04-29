@@ -20,8 +20,9 @@
                           <span>Wajib Pajak</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="#">Daftar Calon Wajib Pajak</a></li>
-                          <li><a  href="#">Daftar Permintaan Wajib Pajak P</a></li>
+                          <li><a  href="{{url('/petugas/pendaftar')}}">Daftar Calon WP</a></li>
+                          <li><a  href="{{url('/petugas/permintaan')}}">Daftar Permintaan WP</a></li>
+                          <li><a  href="#">Daftar Wajib Pajak</a></li>
                       </ul>
                   </li>
 
@@ -30,7 +31,13 @@
                           <i class="fa fa-file-text"></i>
                           <span>Laporan</span>
                       </a>
-                 </li>                
+                 </li>
+                  <li class="sub-menu">
+                      <a href="{{url('/petugas/edit')}}" >
+                          <i class="fa fa-users"></i>
+                          <span>Petugas Pajak</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

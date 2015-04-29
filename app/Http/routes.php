@@ -58,6 +58,11 @@ Route::get('/petugas/pendaftar/setuju/{id}','PetugasPajakController@setuju');
 Route::get('/petugas/pendaftar/tolak/{id}','PetugasPajakController@tolak');
 Route::get('/petugas/permintaan','PetugasPajakController@permintaan');
 Route::get('/petugas/edit','PetugasPajakController@edit');
+Route::get('/petugas/edit/ubah/{id}','PetugasPajakController@ubah');
+Route::post('/petugas/edit/ubah/{id}/submit','PetugasPajakController@submitubah');
+Route::get('/petugas/edit/hapus/{id}','PetugasPajakController@hapus');
+Route::get('/petugas/edit/tambah','PetugasPajakController@tambah');
+Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah');
 
 /* 	***************************
 	Route petugas

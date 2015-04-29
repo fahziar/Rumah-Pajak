@@ -1,4 +1,4 @@
-@extends('petugas.master')
+@extends('petugas.layout')
 @section('content')
 
 @endsection

@@ -36,9 +36,11 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
             </ul>
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/pajak/54321') }}">Pajak Anda</a></li>
+                <li><a href="{{ url('/pajak/54321/search') }}">Lihat Pajak</a></li>
             </ul>
-
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('/pajak/54321/add') }}">Tambah Pajak</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
 
             </ul>
@@ -46,48 +48,9 @@
         </div>
 
     </div>
-    @yield('content')
 
 </nav>
-@if (count($pajaks))
-    <h2>Daftar Pajak Lunas </h2>
-    <table border="1" style="width:100%;">
-        <tr>
-            <td>Kategori Pajak</td>
-            <td>Aset Kepemilikian</td>
-            <td>Tanggal Pelunasan</td>
-        </tr>
-        @foreach($pajaks as $pajak)
-            @if($pajak->status_pelunasan == 1)
-                <tr>
-                    <td>{{$pajak->kategori}}</td>
-                    <td>{{$pajak->aset_kepemilikan}}</td>
-                    <td>{{$pajak->tanggal}}</td>
-                </tr>
-            @endif
-        @endforeach
-    </table>
-    <br><br><br>
-    <h2>Daftar Pajak Tertunggak</h2>
-    <table border="1" style="width:100%;">
-        <tr>
-            <td>Kategori Pajak</td>
-            <td>Aset Kepemilikian</td>
-            <td>Jumlah Pajak</td>
-            <td>Batas Pembayaran</td>
-        </tr>
-        @foreach($pajaks as $pajak)
-            @if($pajak->status_pelunasan == 0)
-                <tr>
-                    <td>{{$pajak->kategori}}</td>
-                    <td>{{$pajak->aset_kepemilikan}}</td>
-                    <td>{{$pajak ->jumlah_pajak}}</td>
-                    <td>{{$pajak ->tanggal}}</td>
-                </tr>
-            @endif
-        @endforeach
-    </table>
-@endif
+@yield('content')
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>

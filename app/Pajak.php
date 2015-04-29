@@ -10,4 +10,8 @@ class Pajak extends Model {
 
     protected $table = "pajak";
 
+    protected $dates = ['tanggal'];
+
+    public $timestamps = false;
+
 }

@@ -40,5 +40,6 @@ Route::post('/wp/daftar', function(){
 });
 
 Route::get('/wp','WajibPajakController@index');
-Route::get('/pajak','PajakController@index');
-Route::get('/pajak/{id}','PajakController@search');
+Route::get('/pajak/{npwpd}/search','PajakController@search');
+Route::get('/pajak/{npwpd}/add','PajakController@add');
+Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');

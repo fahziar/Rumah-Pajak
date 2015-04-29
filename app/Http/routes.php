@@ -64,6 +64,8 @@ Route::get('/petugas/edit/hapus/{id}','PetugasPajakController@hapus');
 Route::get('/petugas/edit/tambah','PetugasPajakController@tambah');
 Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah');
 
+Route::get('/test/test','PajakController@Test');
+
 /* 	***************************
 	Route petugas
 	***************************

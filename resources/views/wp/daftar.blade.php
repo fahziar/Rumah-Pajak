@@ -47,24 +47,14 @@
 				<p>{{ $TTL }}</p>
 				<b>Alamat:</b>
 				<p>{{ $alamat }}</p>
-				<br />
-				<br />
-				<div class="field">
-					<b>Pilih kategori:</b><br />
-					<select id="daftar-kategori" name="kategori" style="width:434px;">
-						<option value="penghasilan">Pajak Penghasilan</option>
-						<option value="hotel">Pajak Hotel</option>
-						<option value="hiburan">Pajak Hiburan</option>
-						<option value="bumibangunan">Pajak Bumi dan Bangunan</option>
-						<option value="restoran">Pajak Restoran</option>
-					</select>
-				</div> <!-- /field -->
+				<br>
 				
 			</div> <!-- /login-fields -->
 			
 			<div class="login-actions">
-													
-				<button type="submit" class="button btn btn-success btn-large" formaction="">Daftar</button>
+				
+				<button type="submit" style="margin-left:1em;" class="button btn btn-success btn-large" formaction="">Daftar</button>
+				<button class="button btn btn-large">Batal</button>
 				
 			</div> <!-- .actions -->
 			

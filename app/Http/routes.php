@@ -20,6 +20,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+/* 	***************************
+	Route wajib pajak
+	***************************
+*/
+
 Route::get('/wp/home', function() {
 	return view('wp.home');
 });
@@ -46,9 +51,18 @@ Route::get('/pajak/{npwpd}/search','PajakController@search');
 Route::get('/pajak/{npwpd}/add','PajakController@add');
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
-Route::get('/petugas','PetugasPajakController@index');
+
+Route::get('/petugas/home','PetugasPajakController@index');
 Route::get('/petugas/pendaftar','PetugasPajakController@pendaftar');
 Route::get('/petugas/pendaftar/setuju/{id}','PetugasPajakController@setuju');
 Route::get('/petugas/pendaftar/tolak/{id}','PetugasPajakController@tolak');
 Route::get('/petugas/permintaan','PetugasPajakController@permintaan');
 Route::get('/petugas/edit','PetugasPajakController@edit');
+
+/* 	***************************
+	Route petugas
+	***************************
+*/
+Route::get('/petugas', function(){
+	return view('petugas.login');
+});

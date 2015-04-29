@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWajibPajakTable extends Migration {
+class CreatePendaftarWajibPajak extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateWajibPajakTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('wajib_pajak', function(Blueprint $table)
+        Schema::create('pendaftarwp', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('nik')->unique();
-            $table->string('npwpd')->unique();
             $table->string('nama');
-            $table->string('alamat');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
+            $table->string('alamat');
+            $table->integer('status_pendaftaran');
         });
 	}
 
@@ -31,7 +31,7 @@ class CreateWajibPajakTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('wajib_pajak');
+        Schema::drop('pendaftarwp');
 	}
 
 }

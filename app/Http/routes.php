@@ -40,6 +40,15 @@ Route::post('/wp/daftar', function(){
 });
 
 Route::get('/wp','WajibPajakController@index');
+
+
 Route::get('/pajak/{npwpd}/search','PajakController@search');
 Route::get('/pajak/{npwpd}/add','PajakController@add');
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
+
+Route::get('/petugas','PetugasPajakController@index');
+Route::get('/petugas/pendaftar','PetugasPajakController@pendaftar');
+Route::get('/petugas/pendaftar/setuju/{id}','PetugasPajakController@setuju');
+Route::get('/petugas/pendaftar/tolak/{id}','PetugasPajakController@tolak');
+Route::get('/petugas/permintaan','PetugasPajakController@permintaan');
+Route::get('/petugas/edit','PetugasPajakController@edit');

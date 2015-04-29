@@ -7,8 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreatePajakTable' => $baseDir . '/database/migrations/2015_04_28_202308_create_pajak_table.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreatePermintaanWPsTable' => $baseDir . '/database/migrations/2015_04_29_053054_create_permintaan_w_ps_table.php',
     'CreateWajibPajakTable' => $baseDir . '/database/migrations/2015_04_28_200351_create_wajib_pajak_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

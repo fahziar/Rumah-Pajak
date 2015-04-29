@@ -38,3 +38,41 @@ Route::get('/wp/daftar', function() {
 Route::post('/wp/daftar', function(){
 	return view('wp.daftar');
 });
+
+///////////////////////////////////
+// kelompok permintaanWP
+///////////////////////////////////
+Route::get('/permintaan', function(){
+	return view('permintaanWP.home');
+});
+
+Route::post('/permintaan', function(){
+	return view('permintaanWP.home');
+});
+
+Route::get('/permintaan/pencabutan', function(){
+	$variable = array(
+		'npwpd' => '32445688474536',
+		'kategori_permintaan' => 'pencabutan wp'
+		);
+	return view('permintaanWP.pencabutanWP')->with($variable);
+});
+
+Route::get('/permintaan/keberatan', function(){
+	$variable = array(
+		'npwpd' => '32445688474536',
+		'kategori_permintaan' => 'keberatan pajak'
+		);
+	return view('permintaanWP.keberatanPajak')->with($variable);
+});
+
+Route::get('/permintaan/pengurangan-sanksi', function(){
+	$variable = array(
+		'npwpd' => '32445688474536',
+		'kategori_permintaan' => 'pengurangan sanksi'
+		);
+	return view('permintaanWP.penguranganSanksi')->with($variable);
+});
+
+Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermintaan');
+Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');

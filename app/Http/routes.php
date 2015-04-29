@@ -64,6 +64,15 @@ Route::get('/petugas/edit/hapus/{id}','PetugasPajakController@hapus');
 Route::get('/petugas/edit/tambah','PetugasPajakController@tambah');
 Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah');
 
+Route::get('test/gettoken', 'PajakController@GetToken');
+Route::get('test/getacctoken', 'PajakController@DukcapilGetAccessToken');
+
+Route::get('test/getdata', 'PajakController@GetDataPenduduk');
+Route::get('test/test', 'PajakController@Test');
+
+Route::get('test/delete', 'PajakController@deleteAcc');
+
+
 /* 	***************************
 	Route petugas
 	***************************

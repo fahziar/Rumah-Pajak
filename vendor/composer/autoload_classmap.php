@@ -7,9 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreatePajakTable' => $baseDir . '/database/migrations/2015_04_28_202308_create_pajak_table.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreatePajaksTable' => $baseDir . '/database/migrations/2015_04_28_204248_create_pajaks_table.php',
     'CreateWajibPajakTable' => $baseDir . '/database/migrations/2015_04_28_200351_create_wajib_pajak_table.php',
+    'CreateWajibPajaksTable' => $baseDir . '/database/migrations/2015_04_28_204237_create_wajib_pajaks_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

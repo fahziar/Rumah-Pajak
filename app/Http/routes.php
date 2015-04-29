@@ -38,3 +38,7 @@ Route::get('/wp/daftar', function() {
 Route::post('/wp/daftar', function(){
 	return view('wp.daftar');
 });
+
+Route::get('/wp','WajibPajakController@index');
+Route::get('/pajak','PajakController@index');
+Route::get('/pajak/{id}','PajakController@search');

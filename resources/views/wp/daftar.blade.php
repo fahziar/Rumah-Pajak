@@ -64,7 +64,7 @@
 			
 			<div class="login-actions">
 													
-				<button type="submit" class="button btn btn-success btn-large">Daftar</button>
+				<button type="submit" class="button btn btn-success btn-large" formaction="">Daftar</button>
 				
 			</div> <!-- .actions -->
 			

@@ -20,6 +20,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+/* 	***************************
+	Route wajib pajak
+	***************************
+*/
+
 Route::get('/wp/home', function() {
 	return view('wp.home');
 });
@@ -44,6 +49,15 @@ Route::get('/pajak/{npwpd}/search','PajakController@search');
 Route::get('/pajak/{npwpd}/add','PajakController@add');
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
+/* 	***************************
+	Route petugas
+	***************************
+*/
+
 Route::get('/petugas/home', function(){
 	return view('petugas.home');
+});
+
+Route::get('/petugas/', function(){
+	return view('petugas.login');
 });

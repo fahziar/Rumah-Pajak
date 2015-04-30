@@ -17,7 +17,6 @@ class CreateWajibPajakTable extends Migration {
             $table->increments('id');
             $table->string('nik')->unique();
             $table->string('npwpd')->unique();
-            $table->string('password', 24);
             $table->string('nama');
             $table->string('alamat');
             $table->string('tempat_lahir');

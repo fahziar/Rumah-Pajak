@@ -16,10 +16,11 @@ class CreatePajakTable extends Migration {
         {
             $table->increments('id');
             $table->string('npwpd');
-            $table->string('kategori');
+            $table->enum('kategori',['Pajak Penghasilan','Pajak Restoran', 'Pajak Hiburan', 'Pajak Hotel', 'Pajak Bumi & Bangunan']);
             $table->integer('aset_kepemilikan');
-            $table->boolean('status_pembayaran');
-            $table->integer('jumlah_dibayarkan');
+            $table->integer('jumlah_pajak');
+            $table->boolean('status_pelunasan');
+            $table->date('tanggal');
         });
 	}
 

@@ -2,7 +2,7 @@
   <div class="footer-inner">
     <div class="container">
       
-        <div class="span6"><div class="navbar-text"><p> &copy; 2015 Dinas Perpajakan Kota Bandung. </p></div></div>
+        <div class="span6"><div class="navbar-text"><p> &copy; 2015 Pemerintah Kota Bandung. </p></div></div>
         <!-- /span12 --> 
       
       <!-- /row --> 

@@ -43,8 +43,8 @@ class PetugasPajakController extends Controller {
     }
 
     public function permintaan(){
-//        $permintaans = PermintaanWP::all();
-        return view('petugas.permintaan');
+        $permintaans = PermintaanWP::all();
+        return view('petugas.permintaan',compact('permintaans'));
     }
 
     public function edit(){

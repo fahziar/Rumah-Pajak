@@ -11,16 +11,17 @@
                         <table class="table table-bordered table-striped table-condensed">
                             <thead>
                             <tr>
-                                <td>Username</td>
-                                <td>Password</td>
-                                <td>Opsi</td>
+                                <td>NPWPD</td>
+                                <td>Kategori</td>
+                                <td>Status Permintaan</td>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($permintaans as $permintaan)
                                 <tr>
-                                    <td>{{$permintaan->username}}</td>
-                                    <td>{{$permintaan->password}}</td>
+                                    <td>{{$permintaan->npwpd}}</td>
+                                    <td>{{$permintaan->kategori_permintaan}}</td>
+                                    <td>{{$permintaan->status_permintaan}}</td>
                                     <td><a href="{{Request::url()}}/setuju/{{$permintaan->id}}"><input type="button" value="Setuju"> </a> <a href="{{Request::url()}}/Tolak/{{$permintaan->id}}"><input type="button" value="Tolak"> </a> </td>
                                 </tr>
                             @endforeach

@@ -44,5 +44,6 @@ class PajakController extends Controller {
 	}
 	
 	public function UpdateToken(){
+		return SSOData::DukcapilGetAccessToken();
 	}
 }

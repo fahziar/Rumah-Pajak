@@ -42,4 +42,7 @@ class PajakController extends Controller {
 		}
 		return 'NIK = '.$arr['NIK'].'<br>'.'Nama = '.$arr['Nama'];
 	}
+	
+	public function UpdateToken(){
+	}
 }

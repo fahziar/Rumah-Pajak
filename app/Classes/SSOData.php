@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Input;
 
 use Cookie;
+use Redirect;
 
 class SSOData {
 	
-	static $CLIENT_ID = "dAU2kooElemk8k6O";
-	static $CLIENT_SECRET = "tY1Tp86GAe1mZIUE";
-	static $REDIRECT_URI = "http://localhost:8888/test/getacctoken/";
+	//static $CLIENT_ID = "dAU2kooElemk8k6O";
+	//static $CLIENT_SECRET = "tY1Tp86GAe1mZIUE";
+	//static $REDIRECT_URI = "http://localhost:8888/test/getacctoken/";
+	static $CLIENT_ID = "f0ZuiP1K9UeUcWxi";
+	static $CLIENT_SECRET = "uJ2MpV4CjGicqvVo";
+	static $REDIRECT_URI = "http://localhost:8080/test/getacctoken/";
 	
 	public static function DukcapilGetAccessToken(){
 		if (Input::has('code')){
@@ -21,9 +26,9 @@ class SSOData {
 			while(!$token['access_token']){
 				$params=[
 					'grant_type'=>'authorization_code',
-					'client_id'=>$CLIENT_ID,
-					'client_secret'=>$CLIENT_SECRET,
-					'redirect_uri'=>$REDIRECT_URI,
+					'client_id'=>SSOData::$CLIENT_ID,
+					'client_secret'=>SSOData::$CLIENT_SECRET,
+					'redirect_uri'=>SSOData::$REDIRECT_URI,
 					'code'=> Input::get('code')
 				];
 				$options = array(
@@ -41,10 +46,11 @@ class SSOData {
 			}
 			Cookie::queue('access_token',$token['access_token']);
 			//TODO to page with Login Success
+			return '';
 			return response($token['access_token']);
 		} else {
 			// redirect to dukcapil
-			return Redirect::away('http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id='.$CLIENT_ID.'&redirect_uri='.$REDIRECT_URI.'&response_type=code');
+			return Redirect::away('http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id='.SSOData::$CLIENT_ID.'&redirect_uri='.SSOData::$REDIRECT_URI.'&response_type=code');
 		}
 	}
 	

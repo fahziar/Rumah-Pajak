@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\SSOData;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,11 +31,15 @@ Route::get('/wp/home', function() {
 });
 
 Route::get('/wp/daftar', function() {
+	$arr=SSOData::GetDataPenduduk();
+	if (get_class($redir = (object) $arr) === 'Illuminate\Http\RedirectResponse'){
+		return $redir;
+	}
 	$view_variable = array(
-		'nama' =>'Ridwan Kamil',
-		'NIK' =>'3274050001110002223',
-		'TTL' => 'Bandung, 11 Januari 1980',
-		'alamat' => 'Jl. Merdeka No. 1'
+		'nama' =>$arr['Nama'],
+		'NIK' =>$arr['NIK'],
+		'TTL' => $arr['Tempat Lahir'].', '.$arr['Tgl Lahir'],
+		'alamat' => $arr['Alamat']
 	);
 
 	return view('wp.daftar')->with($view_variable);
@@ -104,6 +109,8 @@ Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah')
 Route::get('/petugas/wajib_pajak','PetugasPajakController@wajib_pajak');
 
 Route::get('/test/test','PajakController@Test');
+Route::get('/test/a','PajakController@UpdateToken');
+Route::get('/test/getacctoken','PajakController@UpdateToken');
 
 /* 	***************************
 	Route petugas

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\permintaanWP;
 use App\PendaftarWP;
 use App\PetugasPajak;
 use App\WajibPajak;
@@ -43,7 +43,7 @@ class PetugasPajakController extends Controller {
     }
 
     public function permintaan(){
-        $permintaans = PermintaanWP::all();
+        $permintaans = permintaanWP::all();
         return view('petugas.permintaan',compact('permintaans'));
     }
 

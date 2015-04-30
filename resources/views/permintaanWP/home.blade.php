@@ -12,19 +12,19 @@
               <p>Silahkan pilih salah satu jenis pengajuan di bawah ini :</p> 
               <ul style="list-style:none;">
                 <li>
-                  <a href="/permintaan/pencabutan">Pencabutan NPWPD</a>
+                  <a href="{{url('/permintaan/pencabutan')}}">Pencabutan NPWPD</a>
                 </li>
                 <li>
-                  <a href="/permintaan/pengurangan-sanksi">Pengurangan sanksi administrasi</a>
+                  <a href="{{url('/permintaan/pengurangan-sanksi')}}">Pengurangan sanksi administrasi</a>
                 </li>
                 <li>
-                  <a href="/permintaan/keberatan">Keberatan pajak</a>
+                  <a href="{{url('/permintaan/keberatan')}}">Keberatan pajak</a>
                 </li>
               </ul>
               <p>Klik tautan di bawah ini untuk melihat daftar permintaan yang pernah diajukan</p>
               <ul style="list-style:none;">
                 <li>
-                  <a href="/permintaan/daftarPermintaan">Daftar Permintaan</a>
+                  <a href="{{url('/permintaan/daftarPermintaan')}}">Daftar Permintaan</a>
                 </li>
               </ul>
             </div>

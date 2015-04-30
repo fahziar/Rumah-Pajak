@@ -19,6 +19,20 @@ class WajibPajakController extends Controller {
         return $wajibPajak;
 	}
 
+    public function register(){
+        $wajibpajak = new WajibPajak;
+        $arr=SSOData::GetDataPenduduk();
+        if (get_class($redir = (object) $arr) === 'Illuminate\Http\RedirectResponse'){
+            return $redir;
+        }
+        $wajibpajak->nama = $arr['Nama'];
+        $wajibpajak->tempat_lahir = $arr['Tempat Lahir'];
+        $wajibpajak->tanggal_lahir = new Date($arr['Tgl Lahir']);
+        $wajibpajak->alamat = $arr['Alamat'];
+        $wajibpajak->save();
+        return redirect::to('/wp/home');
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

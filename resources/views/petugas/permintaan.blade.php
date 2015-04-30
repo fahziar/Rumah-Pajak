@@ -1,7 +1,5 @@
 @extends('petugas.layout')
 @section('content')
-    @extends('petugas.layout')
-@section('content')
     <section class="wrapper">
         <div class="row mt">
             <div class="col-lg-12">
@@ -22,7 +20,6 @@
                                     <td>{{$permintaan->npwpd}}</td>
                                     <td>{{$permintaan->kategori_permintaan}}</td>
                                     <td>{{$permintaan->status_permintaan}}</td>
-                                    <td><a href="{{Request::url()}}/setuju/{{$permintaan->id}}"><input type="button" value="Setuju"> </a> <a href="{{Request::url()}}/Tolak/{{$permintaan->id}}"><input type="button" value="Tolak"> </a> </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -32,5 +29,4 @@
             </div><!-- /col-lg-4 -->
         </div><!-- /row -->
     </section>
-@endsection
 @endsection

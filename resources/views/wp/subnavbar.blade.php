@@ -12,7 +12,7 @@
             <li><a href="#">Lihat Kelebihan Pembayaran Pajak</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="/permintaan" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
+        <li class="dropdown"><a href="{{url('/permintaan')}}" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
         <!--li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
           <!--ul class="dropdown-menu">
             <li><a href="#">Pengajuan Pengurangan Sanksi</a></li>

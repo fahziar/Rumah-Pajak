@@ -31,7 +31,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="#" method="post">
+		<form action="{{url('/register')}}" method="get">
 		
 			<h1>Pendaftaran Wajib Pajak</h1>		
 			
@@ -53,15 +53,15 @@
 			
 			<div class="login-actions">
 				
-				<button type="submit" style="margin-left:1em;" class="button btn btn-success btn-large" formaction="">Daftar</button>
-				<button class="button btn btn-large">Batal</button>
+				<input type="submit" style="margin-left:1em;" class="button btn btn-success btn-large" formaction="">Daftar</input>
+				<button class="button btn btn-large" >Batal</button>
 				
 			</div> <!-- .actions -->
 			
 			
 			
 		</form>
-		
+
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->

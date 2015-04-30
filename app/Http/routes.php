@@ -84,6 +84,8 @@ Route::get('/permintaan/pengurangan-sanksi', function(){
 	return view('permintaanWP.penguranganSanksi')->with($variable);
 });
 
+Route::get('/register','WajibPajakController@register');
+
 Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermintaan');
 Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');
 Route::get('/wp','WajibPajakController@index');

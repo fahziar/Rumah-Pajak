@@ -7,14 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreatePajakTable' => $baseDir . '/database/migrations/2015_04_28_202308_create_pajak_table.php',
-<<<<<<< HEAD
     'CreatePermintaanWPsTable' => $baseDir . '/database/migrations/2015_04_29_053054_create_permintaan_w_ps_table.php',
-=======
     'CreatePendaftarWPsTable' => $baseDir . '/database/migrations/2015_04_29_130839_create_pendaftar_w_ps_table.php',
     'CreatePendaftarWajibPajak' => $baseDir . '/database/migrations/2015_04_29_125657_create_pendaftar_wajib_pajak.php',
     'CreatePetugasPajak' => $baseDir . '/database/migrations/2015_04_29_125946_create_petugas_pajak.php',
     'CreatePetugasPajaksTable' => $baseDir . '/database/migrations/2015_04_29_130830_create_petugas_pajaks_table.php',
->>>>>>> ddb9a53e47fc96620223394247cf228226f067bb
     'CreateWajibPajakTable' => $baseDir . '/database/migrations/2015_04_28_200351_create_wajib_pajak_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

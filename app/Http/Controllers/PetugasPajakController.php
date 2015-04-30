@@ -43,6 +43,7 @@ class PetugasPajakController extends Controller {
     }
 
     public function permintaan(){
+//        $permintaans = PermintaanWP::all();
         return view('petugas.permintaan');
     }
 
@@ -73,11 +74,21 @@ class PetugasPajakController extends Controller {
     public function tambah(){
         return view('petugas.tambah');
     }
+
     public function submittambah(){
         $petugas = new PetugasPajak;
-        $petugas->username = "blabla";
-        $petugas->password = "blabla";
+        $petugas->username = Input::get('username');
+        $petugas->password = Input::get('password');
         $petugas->save();
         return redirect('/petugas/edit');
+    }
+
+    public function wajib_pajak(){
+        $wps = WajibPajak::all();
+        return view('petugas.wajib_pajak',compact('wps'));
+    }
+
+    public function logout(){
+        return redirect('/petugas');
     }
 }

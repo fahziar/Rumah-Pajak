@@ -22,7 +22,7 @@
                       <ul class="sub">
                           <li><a  href="{{url('/petugas/pendaftar')}}">Daftar Calon WP</a></li>
                           <li><a  href="{{url('/petugas/permintaan')}}">Daftar Permintaan WP</a></li>
-                          <li><a  href="#">Daftar Wajib Pajak</a></li>
+                          <li><a  href="{{url('/petugas/wajib_pajak')}}">Daftar Wajib Pajak</a></li>
                       </ul>
                   </li>
 

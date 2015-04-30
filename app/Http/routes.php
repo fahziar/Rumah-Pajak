@@ -52,7 +52,8 @@ Route::get('/pajak/{npwpd}/add','PajakController@add');
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
 
-Route::get('/petugas/home','PetugasPajakController@index');
+Route::post('/petugas/home','PetugasPajakController@index');
+Route::get('/petugas/home/logout','PetugasPajakController@logout');
 Route::get('/petugas/pendaftar','PetugasPajakController@pendaftar');
 Route::get('/petugas/pendaftar/setuju/{id}','PetugasPajakController@setuju');
 Route::get('/petugas/pendaftar/tolak/{id}','PetugasPajakController@tolak');
@@ -63,6 +64,7 @@ Route::post('/petugas/edit/ubah/{id}/submit','PetugasPajakController@submitubah'
 Route::get('/petugas/edit/hapus/{id}','PetugasPajakController@hapus');
 Route::get('/petugas/edit/tambah','PetugasPajakController@tambah');
 Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah');
+Route::get('/petugas/wajib_pajak','PetugasPajakController@wajib_pajak');
 
 /* 	***************************
 	Route petugas

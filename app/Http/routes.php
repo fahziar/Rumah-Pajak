@@ -66,6 +66,8 @@ Route::get('/petugas/edit/tambah','PetugasPajakController@tambah');
 Route::post('/petugas/edit/tambah/submit','PetugasPajakController@submittambah');
 Route::get('/petugas/wajib_pajak','PetugasPajakController@wajib_pajak');
 
+Route::get('/test/test','PajakController@Test');
+
 /* 	***************************
 	Route petugas
 	***************************

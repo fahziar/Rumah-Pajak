@@ -1,27 +1,31 @@
 @extends('petugas.layout')
 @section('content')
-    @extends('petugas.layout')
-@section('content')
     <section class="wrapper">
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i>Tabel Permintaan Wajib Pajak</h4>
+                    <h4><i class="fa fa-angle-right"></i>Tabel Wajib Pajak</h4>
                     <section id="unseen">
                         <table class="table table-bordered table-striped table-condensed">
                             <thead>
                             <tr>
-                                <td>Username</td>
-                                <td>Password</td>
-                                <td>Opsi</td>
+                                <td>NIK</td>
+                                <td>NPWPD</td>
+                                <td>Nama</td>
+                                <td>Alamat</td>
+                                <td>Tempat Lahir</td>
+                                <td>Tanggal Lahir</td>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($permintaans as $permintaan)
+                            @foreach($wps as $wp)
                                 <tr>
-                                    <td>{{$permintaan->username}}</td>
-                                    <td>{{$permintaan->password}}</td>
-                                    <td><a href="{{Request::url()}}/setuju/{{$permintaan->id}}"><input type="button" value="Setuju"> </a> <a href="{{Request::url()}}/Tolak/{{$permintaan->id}}"><input type="button" value="Tolak"> </a> </td>
+                                    <td>{{$wp->nik}}</td>
+                                    <td>{{$wp->npwpd}}</td>
+                                    <td>{{$wp->nama}}</td>
+                                    <td>{{$wp->alamat}}</td>
+                                    <td>{{$wp->tempat_lahir}}</td>
+                                    <td>{{$wp->tanggal_lahir}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -31,5 +35,4 @@
             </div><!-- /col-lg-4 -->
         </div><!-- /row -->
     </section>
-@endsection
 @endsection

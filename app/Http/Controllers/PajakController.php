@@ -8,6 +8,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
+use App\Classes\SSOData;
+
+
 class PajakController extends Controller {
 
     public function search($npwpd){
@@ -31,4 +34,12 @@ class PajakController extends Controller {
         $pajak->save();
         return $this->search($npwpd);
     }
+	
+	public function Test(){
+		$arr=SSOData::GetDataPenduduk();
+		if (get_class($redir = (object) $arr) === 'Illuminate\Http\RedirectResponse'){
+			return $redir;
+		}
+		return 'NIK = '.$arr['NIK'].'<br>'.'Nama = '.$arr['Nama'];
+	}
 }

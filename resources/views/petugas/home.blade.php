@@ -6,7 +6,7 @@
         <div class="row">
         	<div class="col-md-12 col-sm-12 mb">
             	<div class="grey-panel">
-            		<p style="padding-top:2em;padding-bottom:2em;padding-left:2em;text-align:left;">Selamat datang di halaman petugas. Pilih menu di sebelah kanan untuk melanjutkan.</p>
+            		<p style="padding-top:2em;padding-bottom:2em;padding-left:2em;text-align:left;">Selamat datang di halaman petugas. Pilih menu di sebelah kiri untuk melanjutkan.</p>
 				</div>
 			</div>
 		</div>							

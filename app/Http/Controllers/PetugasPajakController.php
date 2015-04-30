@@ -4,13 +4,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\PendaftarWP;
+use App\PetugasPajak;
 use App\WajibPajak;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class PetugasPajakController extends Controller {
 
     public function index(){
-        return view('petugas.master');
+        return view('petugas.home');
     }
 
     public function pendaftar(){
@@ -41,10 +43,52 @@ class PetugasPajakController extends Controller {
     }
 
     public function permintaan(){
+//        $permintaans = PermintaanWP::all();
         return view('petugas.permintaan');
     }
 
     public function edit(){
-        return view('petugas.edit');
+        $petugass = PetugasPajak::all();
+        return view('petugas.edit',compact('petugass'));
+    }
+
+    public function ubah($id){
+        $petugas = PetugasPajak::find($id);
+
+        return view('petugas.ubah',compact('petugas'));
+    }
+
+    public function submitubah($id){
+        $petugas = PetugasPajak::find($id);
+        $petugas->username = Input::get('username');
+        $petugas->password = Input::get('password');
+        $petugas->save();
+        return redirect('/petugas/edit');
+    }
+
+    public function hapus($id){
+        PetugasPajak::destroy($id);
+        return redirect('/petugas/edit');
+    }
+
+    public function tambah(){
+        return view('petugas.tambah');
+    }
+
+    public function submittambah(){
+        $petugas = new PetugasPajak;
+        $petugas->username = Input::get('username');
+        $petugas->password = Input::get('password');
+        $petugas->save();
+        return redirect('/petugas/edit');
+    }
+
+    public function wajib_pajak(){
+        $wps = WajibPajak::all();
+        return view('petugas.wajib_pajak',compact('wps'));
+    }
+
+    public function logout(){
+        return redirect('/petugas');
     }
 }

@@ -1,5 +1,5 @@
 @extends('wp.layout_user')
-@section('title') Pengajuan Permintaan - Rumah Pajak @stop
+@section('title') Daftar Permintaan - Rumah Pajak @stop
 @section('content')
 <?php
   function to_rupiah($cur)

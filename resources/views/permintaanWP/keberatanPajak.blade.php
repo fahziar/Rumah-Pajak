@@ -1,5 +1,5 @@
-@extends('layouts.layout_user')
-
+@extends('wp.layout_user')
+@section('title') Keberatan Pajak - Rumah Pajak @stop
 @section('content')
 	@if (isset($message))
 	    <h4>{{ $message }}</h4>
@@ -7,7 +7,7 @@
 	  @endif
 	<h2>Pengajuan Keberatan Pajak</h2>
 
-	<form action="/permintaan/prosesPermintaan" method='post' id='form_pengajuan'>
+	<form action="{{url('/permintaan/prosesPermintaan')}}" method='post' id='form_pengajuan'>
 		<div class="form-group">
 			<label for="npwpd">NPWPD : {{ $npwpd }}</label>
 			<input type="hidden" name="npwpd" id="npwpd" value="{{ $npwpd }}">

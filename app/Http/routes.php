@@ -121,3 +121,13 @@ Route::get('/test/getacctoken','PajakController@UpdateToken');
 Route::get('/petugas', function(){
 	return view('petugas.login');
 });
+
+
+////////////////////////////////////
+// Route Pembayaran
+////////////////////////////////////
+Route::get('/pembayaran', function(){
+	$array = array('npwpd'=>'32445688474536');
+	return view('pembayaran.home')->with($array);
+});
+Route::post('/pembayaran/prosesPembayaran', 'BayarPajakController@prosesPembayaran');

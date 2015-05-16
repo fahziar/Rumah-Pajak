@@ -10,6 +10,16 @@
       </label>
       <input type="hidden" name="npwpd" id="npwpd" value="{{ $npwpd }}">
     </div>
+    <div class="form-group">
+      <label for="jenis_pajak">Jenis pajak : </label>
+      <select class='form-control' foorm='form_pengajuan'>
+        <option value='Pajak Penghasilan'>Pajak Penghasilan</option>
+        <option value='Pajak Restoran'>Pajak Restoran</option>
+        <option value='Pajak Hiburan'>Pajak Hiburan</option>
+        <option value='Pajak Hotel'>Pajak Hotel</option>
+        <option value='Pajak Bumi & Bangunan'>Pajak Bumi & Bangunan</option>
+      </select>
+    </div>
     <div class='form-group'>
       <label for='masa_pajak'>Masa Pajak :</label>
       <input type="text" name='masa_pajak' id='masa_pajak' required placeholder='dalam tahun'>

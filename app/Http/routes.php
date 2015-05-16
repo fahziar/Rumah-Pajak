@@ -130,4 +130,8 @@ Route::get('/pembayaran', function(){
 	$array = array('npwpd'=>'32445688474536');
 	return view('pembayaran.home')->with($array);
 });
+// bukti pembayaran
+Route::get('/pembayaran/bukti/{id}', 'BayarPajakController@getBukti');
+// daftar bukti pembayaran
+Route::get('/pembayaran/bukti/', 'BayarPajakController@daftarBukti');
 Route::post('/pembayaran/prosesPembayaran', 'BayarPajakController@prosesPembayaran');

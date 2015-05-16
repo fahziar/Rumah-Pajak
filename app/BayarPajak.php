@@ -7,7 +7,7 @@ class BayarPajak extends Model {
 	protected $table = 'bayar_pajaks';
 	protected $fillable = [
 		'npwpd',
-		'uraian_pembayaran',
+		'jenis_pajak',
 		'masa_pajak',
 		'nomor_stp',
 		'jumlah_pembayaran',

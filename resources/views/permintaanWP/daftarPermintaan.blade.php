@@ -4,22 +4,7 @@
 <?php
   function to_rupiah($cur)
   {
-    $temp = $cur;
-    $rp = 'Rp';
-    $end = ',-';
-    $k = 0;
-    while($temp >= 1000)
-    {
-      $temp = $temp/1000;
-      $k++;
-    }
-    $retval =$rp.$temp;
-    while($k > 0)
-    {
-      $retval = $retval.".000";
-      $k--;
-    }
-    return $retval.$end;
+    return "Rp".number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $cur)),2, ',', '.');
   }
 ?>
 <center><h2>Daftar Pemintaan</h2></center>
@@ -125,6 +110,7 @@
       <thead>
         <tr>
           <td><b />No</td>
+          <td><b />Jenis Pajak</td>
           <td><b />Jenis Sanksi</td>
           <td><b />Jumlah Sanksi</td>
           <td><b />Alasan Permohonan</td>
@@ -140,6 +126,9 @@
             echo '<tr>';
               echo '<td>';
                 echo $i;
+              echo '</td>';
+              echo '<td>';
+                echo $ps['jenis_pajak'];
               echo '</td>';
               echo '<td>';
                 echo $ps['jenis_sanksi'];

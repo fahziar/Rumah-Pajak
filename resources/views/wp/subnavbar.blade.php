@@ -8,6 +8,7 @@
           <ul class="dropdown-menu">
             <li><a href="#">Buat SSPD</a></li>
             <li><a href="{{ url('/pembayaran') }}">Bayar Pajak</a></li>
+            <li><a href="{{ url('/pembayaran/bukti') }}">Bukti Pembayaran Pajak</a></li>
             <li><a href="#">Lihat Pajak Tertunggak</a></li>
             <li><a href="#">Lihat Kelebihan Pembayaran Pajak</a></li>
           </ul>

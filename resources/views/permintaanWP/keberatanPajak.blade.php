@@ -17,8 +17,14 @@
 			<input type="hidden" name="kategori_permintaan" id="kategori_permintaan" value="{{ $kategori_permintaan }}">
 		</div>
 		<div class="form-group">
-			<label for="jenis_pajak">Jenis pajak :</label>
-			<input type="text" name="jenis_pajak" id="jenis_pajak" required>
+			<label for="jenis_pajak">Jenis pajak : </label>
+			<select class='form-control' foorm='form_pengajuan'>
+				<option value='Pajak Penghasilan'>Pajak Penghasilan</option>
+				<option value='Pajak Restoran'>Pajak Restoran</option>
+				<option value='Pajak Hiburan'>Pajak Hiburan</option>
+				<option value='Pajak Hotel'>Pajak Hotel</option>
+				<option value='Pajak Bumi & Bangunan'>Pajak Bumi & Bangunan</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<label for="tahun_pajak">Tahun Pajak :</label>

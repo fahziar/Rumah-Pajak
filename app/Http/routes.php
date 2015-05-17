@@ -93,6 +93,8 @@ Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermin
 Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');
 Route::get('/wp','WajibPajakController@index');
 
+// web service, lihat laporan wp
+Route::get('/laporan/wp/{id}','WajibPajakController@seeLaporan');
 
 Route::get('/pajak/{npwpd}/search','PajakController@search');
 Route::get('/pajak/{npwpd}/add','PajakController@add');
@@ -117,6 +119,7 @@ Route::get('/petugas/wajib_pajak','PetugasPajakController@wajib_pajak');
 Route::get('/test/test','PajakController@Test');
 Route::get('/test/a','PajakController@UpdateToken');
 Route::get('/test/getacctoken','PajakController@UpdateToken');
+
 
 /* 	***************************
 	Route petugas

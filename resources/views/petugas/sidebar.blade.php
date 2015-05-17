@@ -8,7 +8,7 @@
               	  <h5 class="centered">Petugas Pajak</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="#">
+                      <a href="{{route('petugas_home') }}">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
                       </a>

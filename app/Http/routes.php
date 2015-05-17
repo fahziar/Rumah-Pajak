@@ -12,7 +12,10 @@ use App\Classes\SSOData;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function()
+{
+    return view('home');
+});
 
 Route::get('home', 'HomeController@index');
 
@@ -26,11 +29,11 @@ Route::controllers([
 	***************************
 */
 
-Route::get('/wp/home', function() {
+Route::get('/wp/home', ['as' => 'wp_home', function() {
 	return view('wp.home');
-});
+}]);
 
-Route::get('/wp/daftar', function() {
+Route::get('/wp/daftar', ['as' => 'wp_daftar', function() {
 	$arr=SSOData::GetDataPenduduk();
 	if (get_class($redir = (object) $arr) === 'Illuminate\Http\RedirectResponse'){
 		return $redir;
@@ -43,7 +46,7 @@ Route::get('/wp/daftar', function() {
 	);
 
 	return view('wp.daftar')->with($view_variable);
-});
+}]);
 
 Route::post('/wp/daftar', function(){
 	return view('wp.daftar');
@@ -52,37 +55,37 @@ Route::post('/wp/daftar', function(){
 ///////////////////////////////////
 // kelompok permintaanWP
 ///////////////////////////////////
-Route::get('/permintaan', function(){
+Route::get('/permintaan', ['as' => 'wp_permintaan_home', function(){
 	return view('permintaanWP.home');
-});
+}]);
 
 Route::post('/permintaan', function(){
 	return view('permintaanWP.home');
 });
 
-Route::get('/permintaan/pencabutan', function(){
+Route::get('/permintaan/pencabutan', ['as' => 'wp_permintaan_pencabutan', function(){
 	$variable = array(
 		'npwpd' => '32445688474536',
 		'kategori_permintaan' => 'pencabutan wp'
 		);
 	return view('permintaanWP.pencabutanWP')->with($variable);
-});
+}]);
 
-Route::get('/permintaan/keberatan', function(){
+Route::get('/permintaan/keberatan', ['as' => 'wp_permintaan_keberatan', function(){
 	$variable = array(
 		'npwpd' => '32445688474536',
 		'kategori_permintaan' => 'keberatan pajak'
 		);
 	return view('permintaanWP.keberatanPajak')->with($variable);
-});
+}]);
 
-Route::get('/permintaan/pengurangan-sanksi', function(){
+Route::get('/permintaan/pengurangan-sanksi', ['as' => "wp_permintaan_pengurangan" ,function(){
 	$variable = array(
 		'npwpd' => '32445688474536',
 		'kategori_permintaan' => 'pengurangan sanksi'
 		);
 	return view('permintaanWP.penguranganSanksi')->with($variable);
-});
+}]);
 
 Route::get('/permintaan/pembuatanSSPD', function(){
     $variable = array(
@@ -102,13 +105,16 @@ Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermin
 Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');
 Route::get('/wp','WajibPajakController@index');
 
+// web service, lihat laporan wp
+Route::get('/laporan/wp/{id}','WajibPajakController@seeLaporan');
 
 Route::get('/pajak/{npwpd}/search','PajakController@search');
-Route::get('/pajak/{npwpd}/add','PajakController@add');
+Route::get('/pajak/{npwpd}/add', ['as' => 'pajak_tambah', 'uses' => 'PajakController@add']);
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
 
 Route::post('/petugas/home','PetugasPajakController@index');
+Route::get('/petugas/home', ['as' => 'petugas_home', 'uses' => 'PetugasPajakController@index']);
 Route::get('/petugas/home/logout','PetugasPajakController@logout');
 Route::get('/petugas/pendaftar','PetugasPajakController@pendaftar');
 Route::get('/petugas/pendaftar/setuju/{id}','PetugasPajakController@setuju');
@@ -126,6 +132,7 @@ Route::get('/test/test','PajakController@Test');
 Route::get('/test/a','PajakController@UpdateToken');
 Route::get('/test/getacctoken','PajakController@UpdateToken');
 
+
 /* 	***************************
 	Route petugas
 	***************************
@@ -134,22 +141,22 @@ Route::get('/petugas', function(){
 	return view('petugas.login');
 });
 
+Route::get('petugas/wajib_pajak/laporan/{id}','WajibPajakController@laporan');
 
 ////////////////////////////////////
 // Route Pembayaran
 ////////////////////////////////////
-Route::get('/pembayaran', function(){
-	$array = array('npwpd'=>'32445688474536');
-	return view('pembayaran.home')->with($array);
-});
+Route::get('/pembayaran', ['as' => 'pembayaran', function() {
+    $array = array('npwpd' => '32445688474536');
+    return view('pembayaran.home')->with($array);
+}]);
 Route::post('/pembayaran/prosesPembayaran', 'BayarPajakController@prosesPembayaran');
-
-
-//HAPUS INI//
-Route::get('/SSPD', function(){
-    return view('SSPD.templateSSPD');
-});
 
 Route::get('/petugas/pembuatanSTPD', function() {
     return view('petugas.pembuatanSTPD');
 });
+// bukti pembayaran
+Route::get('/pembayaran/bukti/{id}', ['as' => 'pembarayan_bukti', 'uses' => 'BayarPajakController@getBukti']);
+// daftar bukti pembayaran
+Route::get('/pembayaran/bukti/', ['as' => 'pembayaran_bukti', 'uses' => 'BayarPajakController@daftarBukti']);
+Route::post('/pembayaran/prosesPembayaran', ['as' => 'pembayaran_proses', 'uses' =>'BayarPajakController@prosesPembayaran']);

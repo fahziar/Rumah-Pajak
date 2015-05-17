@@ -21,7 +21,7 @@ class CreatePermintaanWPsTable extends Migration {
 			$table->enum('status_permintaan', ['pending', 'disetujui', 'ditolak'])->default('pending');
 
 			// keperluan pengajuan keberatan pajak
-			$table->string('jenis_pajak')->default('');
+			$table->enum('jenis_pajak',['Pajak Penghasilan','Pajak Restoran', 'Pajak Hiburan', 'Pajak Hotel', 'Pajak Bumi & Bangunan']);
 			$table->integer('tahun_pajak')->default(0);
 			$table->string('alasan_pengaduan')->default('');
 			$table->integer('harga_pajak_seharusnya')->default(0);

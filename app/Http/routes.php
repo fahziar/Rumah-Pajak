@@ -95,7 +95,7 @@ Route::get('/wp','WajibPajakController@index');
 
 
 Route::get('/pajak/{npwpd}/search','PajakController@search');
-Route::get('/pajak/{npwpd}/add','PajakController@add');
+Route::get('/pajak/{npwpd}/add', ['as' => 'pajak_tambah', 'uses' => 'PajakController@add']);
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
 

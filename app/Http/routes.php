@@ -121,3 +121,5 @@ Route::get('/test/getacctoken','PajakController@UpdateToken');
 Route::get('/petugas', function(){
 	return view('petugas.login');
 });
+
+Route::get('petugas/wajib_pajak/laporan/{id}','WajibPajakController@laporan');

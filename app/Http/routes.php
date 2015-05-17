@@ -12,7 +12,10 @@ use App\Classes\SSOData;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function()
+{
+    return view('home');
+});
 
 Route::get('home', 'HomeController@index');
 

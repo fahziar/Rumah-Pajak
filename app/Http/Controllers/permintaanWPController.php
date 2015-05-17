@@ -16,7 +16,8 @@ class permintaanWPController extends Controller {
 		permintaanWP::create($input);
 		$message = array('message'=> 'Permintaan pengajuan berhasil dikirim');
 
-		return Redirect::back()->with(compact($message));
+		//return Redirect::back()->with(compact($message));
+		return Redirect::to('/permintaan');
 	}
 
 	public function daftarPermintaan()

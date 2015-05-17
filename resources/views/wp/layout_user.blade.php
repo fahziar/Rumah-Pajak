@@ -33,7 +33,6 @@
   <!-- /main-inner --> 
 </div>
 <!-- /main -->
-</div>
 
 
 

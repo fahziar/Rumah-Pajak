@@ -4,7 +4,7 @@
 
 <div class="row">
         <div class="span12">
-          <div class="widget-header">
+          <div class="widget">
             <div class="widget-header"> <i class="icon-home"></i>
               <h3> Home</h3>
             </div>

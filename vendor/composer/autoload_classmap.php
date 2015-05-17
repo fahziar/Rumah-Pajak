@@ -53,6 +53,7 @@ return array(
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/Parser/NodeTraverser.php',
     'CreateLaporansTable' => $baseDir . '/database/migrations/2015_05_16_035632_create_laporans_table.php',
+    'CreateBayarPajaksTable' => $baseDir . '/database/migrations/2015_05_15_231145_create_bayar_pajaks_table.php',
     'CreatePajakTable' => $baseDir . '/database/migrations/2015_04_28_202308_create_pajak_table.php',
     'CreatePendaftarWajibPajak' => $baseDir . '/database/migrations/2015_04_29_125657_create_pendaftar_wajib_pajak.php',
     'CreatePermintaanWPsTable' => $baseDir . '/database/migrations/2015_04_29_053054_create_permintaan_w_ps_table.php',

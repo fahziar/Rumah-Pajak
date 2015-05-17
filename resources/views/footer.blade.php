@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-bottom" style="margin:0px;">
+<div class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="footer-inner">
     <div class="container">
       

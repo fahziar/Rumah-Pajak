@@ -27,8 +27,8 @@
     <div style="text-align: center">
     <h1 style="font-size: 3em;">Rumah-Pajak</h1>
     <p style="margin-top: 2em; margin-bottom: 2em; font-size: 1em">Selamat datang di Rumah Pajak. Aplikasi pelayanan pajak terpadu.</p>
-    <button class="btn btn-success" style="font-size: 1.4em; height: 1.5em" href="#">Daftar</button>
-    <button class="btn btn-default" style="font-size: 1.4em; height: 1.5em" href="#">Masuk</button>
+    <a class="btn btn-success" style="font-size: 1.4em; height: 1.3em; padding-top: 12px;" href="{{route('wp_daftar')}}">Daftar</a>
+    <a class="btn btn-default" style="font-size: 1.4em; height: 1.3em; padding-top: 12px;" href="{{route('wp_daftar')}}">Masuk</a>
     </div>
 </div>
 </div>

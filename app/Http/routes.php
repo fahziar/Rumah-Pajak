@@ -97,7 +97,7 @@ Route::get('/wp','WajibPajakController@index');
 Route::get('/laporan/wp/{id}','WajibPajakController@seeLaporan');
 
 Route::get('/pajak/{npwpd}/search','PajakController@search');
-Route::get('/pajak/{npwpd}/add','PajakController@add');
+Route::get('/pajak/{npwpd}/add', ['as' => 'pajak_tambah', 'uses' => 'PajakController@add']);
 Route::post('/pajak/{npwpd}/add/submit','PajakController@submit');
 
 
@@ -129,6 +129,7 @@ Route::get('/petugas', function(){
 	return view('petugas.login');
 });
 
+Route::get('petugas/wajib_pajak/laporan/{id}','WajibPajakController@laporan');
 
 ////////////////////////////////////
 // Route Pembayaran

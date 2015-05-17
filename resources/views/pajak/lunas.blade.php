@@ -1,4 +1,5 @@
-@extends('pajak.master')
+@extends('wp.layout_user')
+@section('title') Daftar Pajak Lunas @stop
 @section('content')
 @if (count($pajaks))
     <h2>Daftar Pajak Lunas </h2>

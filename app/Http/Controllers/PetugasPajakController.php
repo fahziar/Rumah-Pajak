@@ -91,4 +91,10 @@ class PetugasPajakController extends Controller {
     public function logout(){
         return redirect('/petugas');
     }
+    public function pembuatanSTPD()
+    {
+        $pdf = \PDF::loadView('STPD.templateSTPD')->setPaper('a4')->setOrientation('vertical')->setWarnings(false);
+        return $pdf->download('STPD.pdf'); //this code is used for the name pdf
+
+    }
 }

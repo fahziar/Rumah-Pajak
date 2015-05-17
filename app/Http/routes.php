@@ -84,8 +84,20 @@ Route::get('/permintaan/pengurangan-sanksi', function(){
 	return view('permintaanWP.penguranganSanksi')->with($variable);
 });
 
+Route::get('/permintaan/pembuatanSSPD', function(){
+    $variable = array(
+        'namaWP' => 'Dummy',
+        'alamatWP' => 'Jl.Ciumbuleuit No 100',
+        'RT' => '001',
+        'RW' => '002',
+        'KodePos' => '43182',
+        'NPWP' => '434452234'
+    );
+    return view('permintaanWP.pembuatanSSPD')->with($variable);
+});
+Route::post('/permintaan/pembuatanSSPD', 'permintaanWPController@pembuatanSSPD');
+Route::post('/petugas/pembuatanSTPD', 'PetugasPajakController@pembuatanSTPD');
 Route::get('/register','WajibPajakController@register');
-
 Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermintaan');
 Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');
 Route::get('/wp','WajibPajakController@index');
@@ -131,3 +143,13 @@ Route::get('/pembayaran', function(){
 	return view('pembayaran.home')->with($array);
 });
 Route::post('/pembayaran/prosesPembayaran', 'BayarPajakController@prosesPembayaran');
+
+
+//HAPUS INI//
+Route::get('/SSPD', function(){
+    return view('SSPD.templateSSPD');
+});
+
+Route::get('/petugas/pembuatanSTPD', function() {
+    return view('petugas.pembuatanSTPD');
+});

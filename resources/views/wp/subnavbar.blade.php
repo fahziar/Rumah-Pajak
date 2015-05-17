@@ -3,17 +3,14 @@
     <div class="container">
       <ul class="mainnav">
 
-        <li><a href="#"><i class='icon-home'></i><span>Home</span></a></li>
+        <li><a href="{{route("wp_home")}}"><i class='icon-home'></i><span>Home</span></a></li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-money'></i><span>Pajak</span><b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Buat SSPD</a></li>
-            <li><a href="{{ url('/pembayaran') }}">Bayar Pajak</a></li>
-            <li><a href="{{ url('/pembayaran/bukti') }}">Bukti Pembayaran Pajak</a></li>
-            <li><a href="#">Lihat Pajak Tertunggak</a></li>
-            <li><a href="#">Lihat Kelebihan Pembayaran Pajak</a></li>
+            <li><a href="{{ route('pembayaran') }}">Bayar Pajak</a></li>
+            <li><a href="{{ route('pembayaran_bukti') }}">Bukti Pembayaran Pajak</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="{{url('/permintaan')}}"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
+        <li class="dropdown"><a href="{{route("wp_permintaan_home")}}"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
         <!--li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-hand-up'></i><span>Pengajuan</span><b class="caret"></b></a>
           <!--ul class="dropdown-menu">
             <li><a href="#">Pengajuan Pengurangan Sanksi</a></li>

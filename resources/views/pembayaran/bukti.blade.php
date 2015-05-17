@@ -12,7 +12,6 @@
 <center>
 <h3>Bukti Pembayaran Pajak</h3>
 <h4>Surat Tanda Terima Setoran (STTS)</h4>
-<h4>
 </center>
 
 <table class='table borderless'>

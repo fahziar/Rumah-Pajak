@@ -5,16 +5,13 @@ use App\Http\Controllers\Controller;
 
 use PDF;
 use TCPDF;
+use App\Pajak;
 use App\WajibPajak;
+use App\BayarPajak;
 use Illuminate\Http\Request;
 
 class WajibPajakController extends Controller {
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	
 	public function index()
 	{
 		$wajibPajak = WajibPajak::all();
@@ -34,7 +31,59 @@ class WajibPajakController extends Controller {
         $wajibpajak->save();
         return redirect::to('/wp/home');
     }
-
+	
+	public function seeLaporan($nik){
+		$wp_cari = WajibPajak::where('nik','=',$nik)->get();
+		if (!count($wp_cari)){
+			$hsl['status']='ERROR NIK NOT FOUND';
+			return $hsl;
+		} else {
+			$hsl['status']='ok';
+		}
+		$wp_f=$wp_cari[0];
+		$npwpd=$wp_f['npwpd'];
+		$hsl['NIK']=$wp_f['nik'];
+		$hsl['NPWPD']=$npwpd;
+		$hsl['Nama']=$wp_f['nama'];
+		$hsl['Alamat']=$wp_f['alamat'];
+		$hsl['Tempat Lahir']=$wp_f['tempat_lahir'];
+		$hsl['Tgl Lahir']=date('d-m-Y',strtotime($wp_f['tanggal_lahir']));
+		$hsl['Status Pajak']=array();
+		
+        $wp_pjk = Pajak::where('npwpd','=',$npwpd)->get();
+		foreach($wp_pjk as $pjk_i){
+			$tipe=$pjk_i['kategori'];
+			/*$tp=array();
+			if ($pjk_i['status_pelunasan']==0){
+				$tp[$tipe]='Lunas';
+			} else {
+				$tp[$tipe]='Tertunggak';
+			}
+			array_push($hsl['Status Pajak'],$tp);*/
+			$tp_mdl=BayarPajak::where('npwpd','=',$npwpd);
+			$tp_mdl->where('jenis_pajak','=',$tipe);
+			$tp_mdl->where('status_pembayaran','=','lunas');
+			$tp_mdl->orderBy('tanggal_pembayaran', 'DESC');
+			$byr = $tp_mdl->get();
+			$a=date_create('now');
+			if (count($byr)){
+				$b=date_create($byr[0]['tanggal_pembayaran']);
+				$c=$byr[0]['masa_pajak'];
+			} else {
+				$b=date_create($pjk_i['tanggal']);
+				$c=1;
+			}
+			$tp=array();
+			if (date_diff($a,$b)->format('%y')<$c){
+				$tp[$tipe]='Lunas';
+			} else {
+				$tp[$tipe]='Tertunggak';
+			}
+			array_push($hsl['Status Pajak'],$tp);
+		}
+		return $hsl;
+	}
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *

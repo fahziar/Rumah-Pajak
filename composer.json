@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
+		"barryvdh/laravel-dompdf": "*",
 		"elibyy/laravel-tcpdf": "0.*"
 	},
 	"require-dev": {

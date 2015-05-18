@@ -14,5 +14,6 @@ return array(
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'Elibyy\\TCPDF\\' => array($vendorDir . '/elibyy/laravel-tcpdf/src'),
     'ClassPreloader\\' => array($vendorDir . '/classpreloader/classpreloader/src'),
+    'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
     'App\\' => array($baseDir . '/app'),
 );

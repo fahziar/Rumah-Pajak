@@ -87,12 +87,26 @@ Route::get('/permintaan/pengurangan-sanksi', ['as' => "wp_permintaan_pengurangan
 	return view('permintaanWP.penguranganSanksi')->with($variable);
 }]);
 
+Route::get('/permintaan/pembuatanSSPD', function(){
+    $variable = array(
+        'namaWP' => 'Dummy',
+        'alamatWP' => 'Jl.Ciumbuleuit No 100',
+        'RT' => '001',
+        'RW' => '002',
+        'KodePos' => '43182',
+        'NPWP' => '434452234'
+    );
+    return view('permintaanWP.pembuatanSSPD')->with($variable);
+});
+Route::post('/permintaan/pembuatanSSPD', 'permintaanWPController@pembuatanSSPD');
+Route::post('/petugas/pembuatanSTPD', 'PetugasPajakController@pembuatanSTPD');
 Route::get('/register','WajibPajakController@register');
-
 Route::post('/permintaan/prosesPermintaan', 'permintaanWPController@prosesPermintaan');
 Route::get('/permintaan/daftarPermintaan', 'permintaanWPController@daftarPermintaan');
 Route::get('/wp','WajibPajakController@index');
 
+// web service, lihat laporan wp
+Route::get('/laporan/wp/{id}','WajibPajakController@seeLaporan');
 
 Route::get('/pajak/{npwpd}/search','PajakController@search');
 Route::get('/pajak/{npwpd}/add', ['as' => 'pajak_tambah', 'uses' => 'PajakController@add']);
@@ -118,6 +132,7 @@ Route::get('/test/test','PajakController@Test');
 Route::get('/test/a','PajakController@UpdateToken');
 Route::get('/test/getacctoken','PajakController@UpdateToken');
 
+
 /* 	***************************
 	Route petugas
 	***************************
@@ -132,10 +147,15 @@ Route::get('petugas/wajib_pajak/laporan/{id}','WajibPajakController@laporan');
 ////////////////////////////////////
 // Route Pembayaran
 ////////////////////////////////////
-Route::get('/pembayaran', ['as' => 'pembayaran', function(){
-	$array = array('npwpd'=>'32445688474536');
-	return view('pembayaran.home')->with($array);
+Route::get('/pembayaran', ['as' => 'pembayaran', function() {
+    $array = array('npwpd' => '32445688474536');
+    return view('pembayaran.home')->with($array);
 }]);
+Route::post('/pembayaran/prosesPembayaran', 'BayarPajakController@prosesPembayaran');
+
+Route::get('/petugas/pembuatanSTPD', function() {
+    return view('petugas.pembuatanSTPD');
+});
 // bukti pembayaran
 Route::get('/pembayaran/bukti/{id}', ['as' => 'pembarayan_bukti', 'uses' => 'BayarPajakController@getBukti']);
 // daftar bukti pembayaran

@@ -7,7 +7,6 @@ use App\PendaftarWP;
 use App\PetugasPajak;
 use App\WajibPajak;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class PetugasPajakController extends Controller {
 
@@ -91,14 +90,18 @@ class PetugasPajakController extends Controller {
     public function logout(){
         return redirect('/petugas');
     }
-
-    public function cek(){
-        $petugas = PetugasPajak::where('username','=',Input::get('username'))->where('password','=',Input::get('password'))->get();
-        if(count($petugas)){
+    public function cek()
+    {
+        $petugas = PetugasPajak::where('username', '=', Input::get('username'))->where('password', '=', Input::get('password'))->get();
+        if (count($petugas)) {
             return redirect('/petugas/home');
-        }
-        else {
+        } else {
             return redirect('/petugas');
         }
+    }
+    public function pembuatanSTPD()
+    {
+        $pdf = \PDF::loadView('STPD.templateSTPD')->setPaper('a4')->setOrientation('vertical')->setWarnings(false);
+        return $pdf->download('STPD.pdf'); //this code is used for the name pdf
     }
 }

@@ -2785,71 +2785,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "tecnick.com/tcpdf",
-        "version": "6.2.6",
-        "version_normalized": "6.2.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/tecnickcom/TCPDF.git",
-            "reference": "a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb",
-            "reference": "a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2015-01-28 18:51:40",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "fonts",
-                "config",
-                "include",
-                "tcpdf.php",
-                "tcpdf_parser.php",
-                "tcpdf_import.php",
-                "tcpdf_barcodes_1d.php",
-                "tcpdf_barcodes_2d.php",
-                "include/tcpdf_colors.php",
-                "include/tcpdf_filters.php",
-                "include/tcpdf_font_data.php",
-                "include/tcpdf_fonts.php",
-                "include/tcpdf_images.php",
-                "include/tcpdf_static.php",
-                "include/barcodes/datamatrix.php",
-                "include/barcodes/pdf417.php",
-                "include/barcodes/qrcode.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPLv3"
-        ],
-        "authors": [
-            {
-                "name": "Nicola Asuni",
-                "email": "info@tecnick.com",
-                "homepage": "http://nicolaasuni.tecnick.com"
-            }
-        ],
-        "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
-        "homepage": "http://www.tcpdf.org/",
-        "keywords": [
-            "PDFD32000-2008",
-            "TCPDF",
-            "barcodes",
-            "datamatrix",
-            "pdf",
-            "pdf417",
-            "qrcode"
-        ]
-    },
-    {
         "name": "laravel/framework",
         "version": "v5.0.31",
         "version_normalized": "5.0.31.0",
@@ -2978,6 +2913,71 @@
         ]
     },
     {
+        "name": "tecnick.com/tcpdf",
+        "version": "6.2.6",
+        "version_normalized": "6.2.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tecnickcom/TCPDF.git",
+            "reference": "a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb",
+            "reference": "a2e8f5b505a7a14a4ed960313c4baf699fd1f4bb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-01-28 18:51:40",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "fonts",
+                "config",
+                "include",
+                "tcpdf.php",
+                "tcpdf_parser.php",
+                "tcpdf_import.php",
+                "tcpdf_barcodes_1d.php",
+                "tcpdf_barcodes_2d.php",
+                "include/tcpdf_colors.php",
+                "include/tcpdf_filters.php",
+                "include/tcpdf_font_data.php",
+                "include/tcpdf_fonts.php",
+                "include/tcpdf_images.php",
+                "include/tcpdf_static.php",
+                "include/barcodes/datamatrix.php",
+                "include/barcodes/pdf417.php",
+                "include/barcodes/qrcode.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "email": "info@tecnick.com",
+                "homepage": "http://nicolaasuni.tecnick.com"
+            }
+        ],
+        "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+        "homepage": "http://www.tcpdf.org/",
+        "keywords": [
+            "PDFD32000-2008",
+            "TCPDF",
+            "barcodes",
+            "datamatrix",
+            "pdf",
+            "pdf417",
+            "qrcode"
+        ]
+    },
+    {
         "name": "elibyy/laravel-tcpdf",
         "version": "v0.0.1",
         "version_normalized": "0.0.1.0",
@@ -3015,5 +3015,134 @@
             }
         ],
         "description": "tcpdf support for laravel 5"
+    },
+    {
+        "name": "phenx/php-font-lib",
+        "version": "0.2.2",
+        "version_normalized": "0.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PhenX/php-font-lib.git",
+            "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+            "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+            "shasum": ""
+        },
+        "time": "2014-02-01 15:22:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "classes/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Ménager",
+                "email": "fabien.menager@gmail.com"
+            }
+        ],
+        "description": "A library to read, parse, export and make subsets of different types of font files.",
+        "homepage": "https://github.com/PhenX/php-font-lib"
+    },
+    {
+        "name": "dompdf/dompdf",
+        "version": "v0.6.1",
+        "version_normalized": "0.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dompdf/dompdf.git",
+            "reference": "cf7d8a0a27270418850cc7d7ea532159e5eeb3eb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dompdf/dompdf/zipball/cf7d8a0a27270418850cc7d7ea532159e5eeb3eb",
+            "reference": "cf7d8a0a27270418850cc7d7ea532159e5eeb3eb",
+            "shasum": ""
+        },
+        "require": {
+            "phenx/php-font-lib": "0.2.*"
+        },
+        "time": "2014-03-11 01:59:52",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "include/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Ménager",
+                "email": "fabien.menager@gmail.com"
+            },
+            {
+                "name": "Brian Sweeney",
+                "email": "eclecticgeek@gmail.com"
+            }
+        ],
+        "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+        "homepage": "https://github.com/dompdf/dompdf"
+    },
+    {
+        "name": "barryvdh/laravel-dompdf",
+        "version": "v0.5.0",
+        "version_normalized": "0.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-dompdf.git",
+            "reference": "a8f72ed075b8a694e88f38a5ff3c05689fbe011e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/a8f72ed075b8a694e88f38a5ff3c05689fbe011e",
+            "reference": "a8f72ed075b8a694e88f38a5ff3c05689fbe011e",
+            "shasum": ""
+        },
+        "require": {
+            "dompdf/dompdf": "0.6.*",
+            "illuminate/support": "5.0.x",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-02-04 10:04:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Barryvdh\\DomPDF\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "A DOMPDF Wrapper for Laravel",
+        "keywords": [
+            "dompdf",
+            "laravel",
+            "pdf"
+        ]
     }
 ]

@@ -49,15 +49,16 @@ Route::get('/wp/daftar', ['as' => 'wp_daftar', function() {
 		'nama' =>$arr['Nama'],
 		'NIK' =>$arr['NIK'],
 		'TTL' => $arr['Tempat Lahir'].', '.$arr['Tgl Lahir'],
+        'tempatLahir' => $arr['Tempat Lahir'],
+        'tanggalLahir' => $arr['Tgl Lahir'],
 		'alamat' => $arr['Alamat']
 	);
 
 	return view('wp.daftar')->with($view_variable);
 }]);
 
-Route::post('/wp/daftar', function(){
-	return view('wp.daftar');
-});
+
+Route::post('/wp/daftar/submit', 'PendaftarWPController@daftar');
 
 ///////////////////////////////////
 // kelompok permintaanWP

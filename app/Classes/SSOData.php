@@ -13,15 +13,13 @@ use Cookie;
 use Redirect;
 
 class SSOData {
-	
-	//static $CLIENT_ID = "dAU2kooElemk8k6O";
-	//static $CLIENT_SECRET = "tY1Tp86GAe1mZIUE";
-	//static $REDIRECT_URI = "http://localhost:8888/test/getacctoken/";
-	static $CLIENT_ID = "x20Kgnbnmy1LShrJ";
-	static $CLIENT_SECRET = "2GmGlXS85RcBNZXk";
-	static $REDIRECT_URI = "http://localhost:8080/Rumah-Pajak/public/test/getacctoken";
-	
-	public static function DukcapilGetAccessToken(){
+
+    static $CLIENT_ID = "yFWiOsxOcMSU4OFM";
+    static $CLIENT_SECRET = "TVbLttUBLZ8u4HBk";
+    static $REDIRECT_URI = "http://pajak.pplbandung.biz.tm/test/getacctoken";
+
+
+    public static function DukcapilGetAccessToken(){
 		if (Input::has('code')){
 			$token = null;
 			while(!$token['access_token']){

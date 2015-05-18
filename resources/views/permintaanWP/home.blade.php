@@ -21,7 +21,7 @@
                   <a href="{{url('/permintaan/keberatan')}}">Keberatan pajak</a>
                 </li>
                 <li>
-                    <a href="#">Pembuatan SSPD</a>
+                    <a href="{{ url('/permintaan/pembuatanSSPD') }}">Pembuatan SSPD</a>
                 </li>
               </ul>
               <p>Klik tautan di bawah ini untuk melihat daftar permintaan yang pernah diajukan</p>

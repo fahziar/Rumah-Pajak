@@ -3,11 +3,13 @@
 <center>
 
     <p style="font-size:16px">PEMERINTAH PROVINSI JAWA BARAT BANDUNG</p>
-    <p style="font-size:16px"><b>DINAS PENDAPATAN DAERAH</b><br> </p>
-    <p style="font-size:14px">Jalan Pajajaran No.88 Telp. (022) 6021802</p>
-    <p style="font-size:14px">BANDUNG 40173</p>
+    <p style="font-size:16px">DINAS Pendapatan Kota Bandung<br> </p>
+    <p style="font-size:14px">Jl. Wastukakencana No. 2 Bandung 9999</p>
     <hr>
-    <p style="font-size:16px"><b>SURAT SETORAN PAJAK DAERAH</b></p>
+    </center>
+    <p style="font-size:14px">Laporan 54321</p>
+<center>
+    <p style="font-size:16px"><b>Pajak Lunas</b></p>
     <p style="font-size:16px"><b>(SSPD)</b></p>
 </center>
     <p style="font-size:12px">Nama Wajib Pajak : <?php echo $_REQUEST["namaWP"]; ?></p>

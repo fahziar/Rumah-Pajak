@@ -113,7 +113,7 @@ return [
 		/*
 		 * Laravel Framework Service Providers...
 		 */
-        'Elibyy\TCPDF\ServiceProvider',
+        //'Elibyy\TCPDF\ServiceProvider',
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Bus\BusServiceProvider',

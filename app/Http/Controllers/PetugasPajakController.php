@@ -7,6 +7,7 @@ use App\PendaftarWP;
 use App\PetugasPajak;
 use App\WajibPajak;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class PetugasPajakController extends Controller {
 

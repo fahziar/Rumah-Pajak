@@ -8,7 +8,9 @@ use TCPDF;
 use App\Pajak;
 use App\WajibPajak;
 use App\BayarPajak;
+use App\Classes\SSOData;
 use Illuminate\Http\Request;
+use Redirect;
 
 class WajibPajakController extends Controller {
 	
@@ -25,11 +27,13 @@ class WajibPajakController extends Controller {
             return $redir;
         }
         $wajibpajak->nama = $arr['Nama'];
+        $wajibpajak->nik = $arr['NIK'];
+        $wajibpajak->npwpd = $arr['NIK'];
         $wajibpajak->tempat_lahir = $arr['Tempat Lahir'];
-        $wajibpajak->tanggal_lahir = new Date($arr['Tgl Lahir']);
+        $wajibpajak->tanggal_lahir = date('d-m-Y',strtotime($arr['Tgl Lahir']));
         $wajibpajak->alamat = $arr['Alamat'];
         $wajibpajak->save();
-        return redirect::to('/wp/home');
+        return Redirect::to('/wp/home');
     }
 	
 	public function seeLaporan($nik){

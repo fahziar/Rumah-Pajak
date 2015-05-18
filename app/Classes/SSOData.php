@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Pajak;
+use App\WajibPajak;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -99,6 +100,36 @@ class SSOData {
 		//if invalid data, get token
 		if (!$arr['NIK']){
 			return SSOData::DukcapilGetAccessToken();
+		}
+		return $arr;
+	}
+	
+	public static function GetNPWP(){	
+		//Get Token
+		$acc_token=SSOData::GetToken();
+		if (get_class($redir = (object) $acc_token) === 'Illuminate\Http\RedirectResponse'){
+			return $redir;
+		}
+		//Get Data
+		//retry 10x until get it right
+		for ($i=0;$i<10;$i++){
+			$arr = SSOData::DukcapilGetDataPenduduk($acc_token);
+			if ($arr['NIK'])break;
+		}
+		//if invalid data, get token
+		if (!$arr['NIK']){
+			return SSOData::DukcapilGetAccessToken();
+		} else {
+			$nik=$arr['NIK'];
+			$wp_cari = WajibPajak::where('nik','=',$nik)->get();
+			if (!count($wp_cari)){
+				$arr=array();
+				$arr['npwpd']='-';
+			} else {
+				$wp_f=$wp_cari[0];
+				$arr=array();
+				$arr['npwpd']=$wp_f['npwpd'];
+			}
 		}
 		return $arr;
 	}

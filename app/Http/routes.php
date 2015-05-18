@@ -30,6 +30,13 @@ Route::controllers([
 */
 
 Route::get('/wp/home', ['as' => 'wp_home', function() {
+	$arr=SSOData::GetNPWP();
+	if (get_class($redir = (object) $arr) === 'Illuminate\Http\RedirectResponse'){
+		return $redir;
+	} else if ($arr['npwpd']==='-'){
+		return Redirect::to('wp/daftar');
+	}
+	
 	return view('wp.home');
 }]);
 

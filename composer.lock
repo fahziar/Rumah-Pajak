@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "771e20656288e4840b3275d3e87fe0ca",
+    "hash": "2f39ef5cb9b3a046acc5f3968c02c6e3",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -310,7 +310,8 @@
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
             "time": "2014-03-11 01:59:52"
-
+        },
+        {
             "name": "elibyy/laravel-tcpdf",
             "version": "v0.0.1",
             "source": {

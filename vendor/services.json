@@ -1,5 +1,6 @@
 {
     "providers": [
+        "Elibyy\\TCPDF\\ServiceProvider",
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
         "Illuminate\\Auth\\AuthServiceProvider",
         "Illuminate\\Bus\\BusServiceProvider",
@@ -30,6 +31,7 @@
         "Barryvdh\\DomPDF\\ServiceProvider"
     ],
     "eager": [
+        "Elibyy\\TCPDF\\ServiceProvider",
         "Illuminate\\Auth\\AuthServiceProvider",
         "Illuminate\\Routing\\ControllerServiceProvider",
         "Illuminate\\Cookie\\CookieServiceProvider",

@@ -126,6 +126,7 @@ Route::get('/petugas', function(){
 	return view('petugas.login');
 });
 
+Route::post('/petugas/login', 'PetugasPajakController@cek');
 Route::get('petugas/wajib_pajak/laporan/{id}','WajibPajakController@laporan');
 
 ////////////////////////////////////
